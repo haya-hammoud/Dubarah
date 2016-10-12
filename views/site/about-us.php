@@ -12,7 +12,7 @@
 			<div class="breadcrumb-section">
 				<ol class="breadcrumb">
 					<li><a href="index.php">Home</a></li>
-					<li>About</li> 
+					<li>hehaahah</li>
 				</ol><!-- breadcrumb -->						
 				<h2 class="title">Who we are</h2>	
 			</div><!-- banner -->
