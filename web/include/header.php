@@ -64,12 +64,14 @@
 						<ul class="nav navbar-nav">
 							<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">Jobs</a></li>
-									<li><a href="#">Housing</a></li>
-									<li><a href="#">Investment</a></li>
-									<li><a href="#">Education</a></li>
-									<li><a href="#">Initiatives</a></li>
-									<li><a href="#">Expatriate Guide</a></li>
+									<?php
+									$query = \app\models\Categories::find()->andFilterWhere([ 'parent_categorie'=> "null"]);
+									$categories  = $query->all();
+									foreach ($categories as $cat ){
+									echo " <li><a href=\"#\">" .$cat['english_name']."</a></li>" ;
+									}
+									?>
+
 								</ul>
 							</li>
 						</ul>

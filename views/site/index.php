@@ -16,15 +16,18 @@ include('include/header.php'); ?>
                         <br /><br />
                         <!-- banner-form -->
                         <div class="banner-form">
-                            <form action="#">
+                            <form action="#" method="post">
                                 <!-- category-change -->
                                 <div class="dropdown category-dropdown">                        
                                     <a data-toggle="dropdown" href="#"><span class="change-text">Select Category</span> <i class="fa fa-angle-down"></i></a>
                                     <ul class="dropdown-menu category-change">
-                                        <li><a href="#">Jobs</a></li>
-                                        <li><a href="#">Housing</a></li>
-                                        <li><a href="#">Investments</a></li>
-                                        <li><a href="#">Education</a></li>
+                                        <?php
+                                        $query = \app\models\Categories::find()->andFilterWhere([ 'parent_categorie'=> "null"]);
+                                        $categories  = $query->all();
+                                        foreach ($categories as $cat ){
+                                            echo " <li><a href=\"#\">" .$cat['english_name']."</a></li>" ;
+                                        }
+                                        ?>
                                     </ul>                               
                                 </div><!-- category-change -->
                             
@@ -49,54 +52,20 @@ include('include/header.php'); ?>
 
         <div class="container">
             <div class="section category-ad text-center">
-                <ul class="category-list">  
-                    <li class="category-item">
-                        <a href="index.php?r=site/categories">
-                            <div class="category-icon"><img src="images/icon/1.png" alt="images" class="img-responsive"></div>
-                            <span class="category-title">Jobs</span>
-                            <span class="category-quantity">(1298)</span>
+                <ul class="category-list">
+                    <?php
+                    foreach ($categories as $category ){
+                        echo "<li class='category-item'>
+                        <a href=\"index.php?r=site/categories\">
+                            <div class='category-icon'><img src='".$category['icon']."' alt='images' class='img-responsive'></div>
+                            <span class='category-title'>".$category['english_name']."</span>
+                            <span class='category-quantity'>(1298)</span>
                         </a>
-                    </li><!-- category-item -->
-                    
-                    <li class="category-item">
-                        <a href="index.php?r=site/categories">
-                            <div class="category-icon"><img src="images/icon/2.png" alt="images" class="img-responsive"></div>
-                            <span class="category-title">Housing</span>
-                            <span class="category-quantity">(76212)</span>
-                        </a>
-                    </li><!-- category-item -->
-                    
-                    <li class="category-item">
-                        <a href="index.php?r=site/categories">
-                            <div class="category-icon"><img src="images/icon/3.png" alt="images" class="img-responsive"></div>
-                            <span class="category-title">Investments</span>
-                            <span class="category-quantity">(212)</span>
-                        </a>
-                    </li><!-- category-item -->
-                    
-                    <li class="category-item">
-                        <a href="index.php?r=site/categories">
-                            <div class="category-icon"><img src="images/icon/4.png" alt="images" class="img-responsive"></div>
-                            <span class="category-title">Education</span>
-                            <span class="category-quantity">(972)</span>
-                        </a>
-                    </li><!-- category-item -->
-                    
-                    <li class="category-item">
-                        <a href="index.php?r=site/categories">
-                            <div class="category-icon"><img src="images/icon/5.png" alt="images" class="img-responsive"></div>
-                            <span class="category-title">Expatriate Guide</span>
-                            <span class="category-quantity">(1298)</span>
-                        </a>
-                    </li><!-- category-item -->
-                    
-                    <li class="category-item">
-                        <a href="index.php?r=site/categories">
-                            <div class="category-icon"><img src="images/icon/6.png" alt="images" class="img-responsive"></div>
-                            <span class="category-title">Initiatives</span>
-                            <span class="category-quantity">(76212)</span>
-                        </a>
-                    </li><!-- category-item -->     
+                    }
+                    </li> ";
+                  }
+                    ?>
+
                 </ul>               
             </div><!-- category-ad -->  
 
