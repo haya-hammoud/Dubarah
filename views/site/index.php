@@ -16,7 +16,7 @@ include('include/header.php'); ?>
                         <br /><br />
                         <!-- banner-form -->
                         <div class="banner-form">
-                            <form action="#" method="post">
+                            <form action="index.php?r=site/search" method="post">
                                 <!-- category-change -->
                                 <div class="dropdown category-dropdown">                        
                                     <a data-toggle="dropdown" href="#"><span class="change-text">Select Category</span> <i class="fa fa-angle-down"></i></a>
@@ -31,7 +31,7 @@ include('include/header.php'); ?>
                                     </ul>                               
                                 </div><!-- category-change -->
                             
-                                <input type="text" class="form-control" placeholder="What are you looking for...?">
+                                <input type="text" name="search" class="form-control" placeholder="What are you looking for...?">
                                 <button type="submit" class="form-control" value="Search">Search</button>
                             </form>
                         </div><!-- banner-form -->
@@ -539,7 +539,7 @@ include('include/header.php'); ?>
                     <!-- single-cta -->
                     <div class="col-sm-4">
                         <div class="single-cta">
-                            <a href="#">
+                            <a href="index.php?r=site/ask-dubarji">
                                 <!-- cta-icon -->
                                 <div class="cta-icon icon-secure">
                                     <img src="images/icon/old/ask.png" alt="Icon" class="img-responsive">
@@ -569,7 +569,7 @@ include('include/header.php'); ?>
                     <!-- single-cta -->
                     <div class="col-sm-4">
                         <div class="single-cta">
-                            <a href="#">
+                            <a href="index.php?r=site/suggestions">
                                 <!-- cta-icon -->
                                 <div class="cta-icon icon-trading">
                                     <img src="images/icon/old/Suggestions.png" alt="Icon" class="img-responsive">

@@ -153,4 +153,21 @@ class SiteController extends Controller
     {
         return $this->render('my-profile');
     }
+
+    public function actionAskDubarji()
+    {
+        return $this->render('ask-dubarji');
+    }
+
+    public function actionSuggestions()
+    {
+        return $this->render('suggestions');
+    }
+
+    public function actionSearch()
+    {
+       //$category = ($_POST['search']);
+        return $this->render('search');
+
+    }
 }
